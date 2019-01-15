@@ -1,79 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-
-<title>Part3</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part 3</title>
 </head>
-
-
 <body>
-	<pre>[</pre>
-	<pre>	{</pre>
-	<pre>		"userId": 1,</pre>
-	<pre>		"id": 1,</pre>
-	<pre>		"title": "delectus aut autem",</pre>
-	<pre>		"completed": false</pre>
-	<pre>	},</pre>
-	<pre>	{</pre>
-	<pre>		"userId": 1,</pre>
-	<pre>		"id": 2,</pre>
-	<pre>		"title": "quis ut nam facilis et officia qui",</pre>
-	<pre>		"completed": false</pre>
-	<pre>	},</pre>
-	<pre>	{</pre>
-	<pre>		"userId": 1,</pre>
-	<pre>		"id": 3,</pre>
-	<pre>		"title": "fugiat veniam minus",</pre>
-	<pre>		"completed": false</pre>
-	<pre>	},</pre>
-	<pre>	{</pre>
-	<pre>		"userId": 1,</pre>
-	<pre>		"id": 4,</pre>
-	<pre>		"title": "et porro tempora",</pre>
-	<pre>		"completed": true</pre>
-	<pre>	},</pre>
-	<pre>	{</pre>
-	<pre>		"userId": 1,</pre>
-	<pre>		"id": 5,</pre>
-	<pre>		"title": "laboriosam mollitia et enim quasi adipisci quia provident illum",</pre>
-	<pre>		"completed": true</pre>
-	<pre>	},</pre>
-	<pre>	{</pre>
-	<pre>		"userId": 1,</pre>
-	<pre>		"id": 6,</pre>
-	<pre>		"title": "qui ullam ratione quibusdam voluptatem quia omnis",</pre>
-	<pre>		"completed": false</pre>
-	<pre>	},</pre>
-	<pre>	{</pre>
-	<pre>		"userId": 1,</pre>
-	<pre>		"id": 7,</pre>
-	<pre>		"title": "illo expedita consequatur quia in",</pre>
-	<pre>		"completed": false</pre>
-	<pre>	},</pre>
-	<pre>	{</pre>
-	<pre>		"userId": 1,</pre>
-	<pre>		"id": 8,</pre>
-	<pre>		"title": "quo adipisci enim quam ut ab",</pre>
-	<pre>		"completed": true</pre>
-	<pre>	},</pre>
-	<pre>	{</pre>
-	<pre>		"userId": 1,</pre>
-	<pre>		"id": 9,</pre>
-	<pre>		"title": "molestiae perspiciatis ipsa",</pre>
-	<pre>		"completed": false</pre>
-	<pre>	},</pre>
-	<pre>	{</pre>
-	<pre>		"userId": 1,</pre>
-	<pre>		"id": 10,</pre>
-	<pre>		"title": "illo est ratione doloremque quia maiores aut",</pre>
-	<pre>		"completed": true</pre>
-	<pre>	}</pre>
-	<pre>]</pre>
+    <script>
+        fetch("todo.json")
+        .then(function(response){
+            return response.json();
+        }).then(function(json){
+            var out = '';
+            for(let i in json)
+            {
+                for(let value in json[i])
+                {
+                    out += '<p>${value}:${json[i][value]}</p>'
+                }
+            }
+            document.querySelector("body").innerHTML = out;
+        })
+
+    </script>
 </body>
-
-<script type="text/javascript" src="todo.json">
-
-	
-	
-</script>
 </html>
